@@ -1,0 +1,64 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 1s ease-in-out;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#displayGuessNum, #displayAns {
+    font-size: 22px;
+    color: #4a90e2;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f1f3f5;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+button {
+    background-color: #4a90e2;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #357abd;
+    transform: scale(1.05);
+}
+
+
+#displayAns.winner {
+    background-color: #28a745;
+    color: white;
+}
+
+
+#displayAns.loser {
+    background-color: #dc3545;
+    color: white;
+}
