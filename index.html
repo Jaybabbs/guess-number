@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 1s ease-in-out;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #displayGuessNum, #displayAns {
+            font-size: 22px;
+            color: #4a90e2;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f1f3f5;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #357abd;
+            transform: scale(1.05);
+        }
+
+        /* Winning style animation */
+        #displayAns.winner {
+            background-color: #28a745;
+            color: white;
+        }
+
+        /* Losing style animation */
+        #displayAns.loser {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Guess the Number Game</h1>
+    <div id="displayAns"></div>
+    <p id="displayGuessNum">Your guess will appear here</p>
+    <button onclick="confirmNUM()">Guess Num</button>
+</div>
+
+<script>
+    function confirmNUM() {
+        let guessNum = Math.floor(Math.random() * 10);
+        document.getElementById('displayGuessNum').innerText = "You guessed: " + guessNum;
+        let realNumber = 5;
+        let displayAns = document.getElementById('displayAns');
+
+        if (guessNum === realNumber) {
+            displayAns.innerHTML = realNumber + " - Wow, you win!";
+            displayAns.classList.add('winner');
+            displayAns.classList.remove('loser');
+        } else {
+            displayAns.innerHTML = "Try your luck again!";
+            displayAns.classList.add('loser');
+            displayAns.classList.remove('winner');
+        }
+    }
+</script>
+
+</body>
+</html>
